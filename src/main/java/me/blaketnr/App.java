@@ -1,15 +1,11 @@
 package me.blaketnr;
 
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder'");
+        Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
         Guitar guitar = inventory.search(whatErinLikes);
         if (guitar != null) {
             System.out.println("Erin, you might like this " + guitar.toString());
@@ -19,6 +15,6 @@ public class App {
     }
 
     private static void initializeInventory(Inventory inventory) {
-        inventory.addGuitar("1", 1, "fender", "Stratocastor", "electric", "Alder", "Alder");
+        inventory.addGuitar("1", 1, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
     }
 }
